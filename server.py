@@ -3,6 +3,7 @@
 from resources.connection import Connection
 import cmd 
 from colorama import Fore,Style
+import plugins.malWinrar as malrar
 
 class Server(cmd.Cmd):
     server = Connection()
@@ -67,6 +68,12 @@ class Server(cmd.Cmd):
             print("")
         except:
             print(Fore.RED+"[x] Ocurrio Un error.")
+
+    def do_malWinrar(self,line):
+        rar=malrar.MalWinrar()
+        rar.correrAtaque()
+        
+
 
     
 
